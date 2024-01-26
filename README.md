@@ -11,6 +11,24 @@ The goal of this project was to use supervised learning techniques to build a ma
 ## Process
 ### EDA
 
+``` python
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+import warnings
+
+# Ignore all warnings
+warnings.filterwarnings("ignore")
+
+# Load diabetes dataset
+diabetes_data = pd.read_csv('diabetes.csv')
+
+# Check for missing values
+missing_values = diabetes_data.isnull().sum()
+print("Missing Values:\n", missing_values)
+```
+
 ### Preprocessing
 
 ### Feature Engineering
