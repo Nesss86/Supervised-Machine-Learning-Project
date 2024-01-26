@@ -49,9 +49,47 @@ plt.show()
 # Visualize relationships between predictor variables
 sns.pairplot(diabetes_data)
 plt.show()
+
+average_age = diabetes_data['Age'].mean()
+print("Average Age:", average_age)
+
+average_glucose_diabetes = diabetes_data[diabetes_data['Outcome'] == 1]['Glucose'].mean()
+average_glucose_no_diabetes = diabetes_data[diabetes_data['Outcome'] == 0]['Glucose'].mean()
+
+print("Average Glucose Level for Diabetes:", average_glucose_diabetes)
+print("Average Glucose Level for No Diabetes:", average_glucose_no_diabetes)
+
+average_bmi_diabetes = diabetes_data[diabetes_data['Outcome'] == 1]['BMI'].mean()
+average_bmi_no_diabetes = diabetes_data[diabetes_data['Outcome'] == 0]['BMI'].mean()
+
+print("Average BMI for Diabetes:", average_bmi_diabetes)
+print("Average BMI for No Diabetes:", average_bmi_no_diabetes)
+
+# Visualize the distribution of predictor variables for diabetes and no diabetes
+sns.boxplot(x='Outcome', y='value', data=pd.melt(diabetes_data, id_vars=['Outcome']))
+plt.show()
 ```
 
 ### Preprocessing
+
+``` python
+# Check for missing values
+missing_values = diabetes_data.isnull().sum()
+print("Missing Values:\n", missing_values)
+
+#Replace missing values with the mean or median of the respective columns:
+diabetes_data.fillna(diabetes_data.median(), inplace=True)
+
+# Visualize boxplots to identify outliers
+plt.figure(figsize=(15, 10))
+diabetes_data.boxplot()
+plt.show()
+
+# Handle outliers (if necessary)
+from scipy.stats.mstats import winsorize
+diabetes_data['Insulin'] = winsorize(diabetes_data['Insulin'], limits=[0.05, 0.05])
+```
+
 
 ### Feature Engineering
 
