@@ -69,6 +69,9 @@ print("Average BMI for No Diabetes:", average_bmi_no_diabetes)
 sns.boxplot(x='Outcome', y='value', data=pd.melt(diabetes_data, id_vars=['Outcome']))
 plt.show()
 ```
+<img src="images/Correlation Matrix.png" alt="Notebook">
+
+<img src="images/Boxplot for Outliers.png" alt="Notebook">
 
 ### Preprocessing
 
