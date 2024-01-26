@@ -152,7 +152,22 @@ X_train_resampled, y_train_resampled = smote.fit_resample(preprocessor.fit_trans
 
 ## Results
 
-The initiative was to try two models to determine which would be the best to use for this prediction. The logisitc regression model was peformed first and yielded the following results:
+The initiative was to try two models to determine which would be the best to use for this prediction. 
+
+The logisitc regression model was peformed first and yielded the following results:
+<img src="images/Logistic Regression.png" alt="Notebook">
+
+The Random Forest Model was perfomed second and yielded the following results:
+<img src="images/Random Forest Model.png" alt="Notebook">
+
+
+## Conclusion
+- The strongest positive correlations were pregnancies and age. As both of those increased, the likelihood of diabetes incresed
+- There appear to be outliers for skin thickness and insulin
+- The average age of people with diabetes was 33
+- While the random forest model had higher accuracy, it was determined that the logisitic regression model had better recall, F-1 score, ROC-AUC, and would be the better choice for supervised machine learning for this dataset.
+
+
 
 
 
