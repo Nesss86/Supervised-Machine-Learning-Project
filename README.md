@@ -150,6 +150,12 @@ smote = SMOTE(random_state=42)
 X_train_resampled, y_train_resampled = smote.fit_resample(preprocessor.fit_transform(X_train), y_train)
 ```
 
+## Results
+
+The initiative was to try two models to determine which would be the best to use for this prediction. The logisitc regression model was peformed first and yielded the following results:
+
+
+
 
 
 
