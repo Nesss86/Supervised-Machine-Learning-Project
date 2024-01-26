@@ -27,6 +27,28 @@ diabetes_data = pd.read_csv('diabetes.csv')
 # Check for missing values
 missing_values = diabetes_data.isnull().sum()
 print("Missing Values:\n", missing_values)
+
+# Visualize the relationship between predictor variables and the outcome variable
+sns.pairplot(diabetes_data, hue='Outcome', diag_kind='kde')
+plt.show()
+
+# Calculate and visualize the correlation matrix
+correlation_matrix = diabetes_data.corr()
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
+plt.show()
+
+# Visualize the distribution of each predictor variable
+diabetes_data.hist(figsize=(12, 10))
+plt.show()
+
+# Visualize boxplots to identify outliers
+plt.figure(figsize=(15, 10))
+diabetes_data.boxplot()
+plt.show()
+
+# Visualize relationships between predictor variables
+sns.pairplot(diabetes_data)
+plt.show()
 ```
 
 ### Preprocessing
