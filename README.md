@@ -11,64 +11,10 @@ The goal of this project was to use supervised learning techniques to build a ma
 ## Process
 ### EDA
 
-``` python
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-import warnings
-
-# Ignore all warnings
-warnings.filterwarnings("ignore")
-
-# Load diabetes dataset
-diabetes_data = pd.read_csv('diabetes.csv')
-
-# Check for missing values
-missing_values = diabetes_data.isnull().sum()
-print("Missing Values:\n", missing_values)
-
-# Visualize the relationship between predictor variables and the outcome variable
-sns.pairplot(diabetes_data, hue='Outcome', diag_kind='kde')
-plt.show()
-
-# Calculate and visualize the correlation matrix
-correlation_matrix = diabetes_data.corr()
-sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm')
-plt.show()
-
-# Visualize the distribution of each predictor variable
-diabetes_data.hist(figsize=(12, 10))
-plt.show()
-
-# Visualize boxplots to identify outliers
-plt.figure(figsize=(15, 10))
-diabetes_data.boxplot()
-plt.show()
-
-# Visualize relationships between predictor variables
-sns.pairplot(diabetes_data)
-plt.show()
-
-average_age = diabetes_data['Age'].mean()
-print("Average Age:", average_age)
-
-average_glucose_diabetes = diabetes_data[diabetes_data['Outcome'] == 1]['Glucose'].mean()
-average_glucose_no_diabetes = diabetes_data[diabetes_data['Outcome'] == 0]['Glucose'].mean()
-
-print("Average Glucose Level for Diabetes:", average_glucose_diabetes)
-print("Average Glucose Level for No Diabetes:", average_glucose_no_diabetes)
-
-average_bmi_diabetes = diabetes_data[diabetes_data['Outcome'] == 1]['BMI'].mean()
-average_bmi_no_diabetes = diabetes_data[diabetes_data['Outcome'] == 0]['BMI'].mean()
-
-print("Average BMI for Diabetes:", average_bmi_diabetes)
-print("Average BMI for No Diabetes:", average_bmi_no_diabetes)
-
-# Visualize the distribution of predictor variables for diabetes and no diabetes
-sns.boxplot(x='Outcome', y='value', data=pd.melt(diabetes_data, id_vars=['Outcome']))
-plt.show()
-```
+- Looked for missing values and outliers
+- Generated summary statistics to look at distribution
+- Generated a Correlation matrix to see which variables had the strongest relationship
+- 
 <img src="images/Correlation Matrix.png" alt="Notebook">
 
 <img src="images/Boxplot for Outliers.png" alt="Notebook">
