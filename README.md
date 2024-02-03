@@ -27,7 +27,7 @@ The goal of this project was to use supervised learning techniques to build a ma
  - Looked at the summary statistics to see the distribution
 
 
-<img src="images/Summary Statistic.png" alt="Notebook">
+<img src="images/Summary Statistics.png" alt="Notebook">
 
 
 
