@@ -14,30 +14,19 @@ The goal of this project was to use supervised learning techniques to build a ma
 - Looked for missing values and outliers
 - Generated summary statistics to look at distribution
 - Generated a Correlation matrix to see which variables had the strongest relationship
-- 
+
 <img src="images/Correlation Matrix.png" alt="Notebook">
 
 <img src="images/Boxplot for Outliers.png" alt="Notebook">
 
 ### Preprocessing
 
-``` python
-# Check for missing values
-missing_values = diabetes_data.isnull().sum()
-print("Missing Values:\n", missing_values)
 
-#Replace missing values with the mean or median of the respective columns:
-diabetes_data.fillna(diabetes_data.median(), inplace=True)
+ - Checked for missing values
+ - Checked for outliers
+ - Looked at the summary statistics to see the distribution
 
-# Visualize boxplots to identify outliers
-plt.figure(figsize=(15, 10))
-diabetes_data.boxplot()
-plt.show()
 
-# Handle outliers (if necessary)
-from scipy.stats.mstats import winsorize
-diabetes_data['Insulin'] = winsorize(diabetes_data['Insulin'], limits=[0.05, 0.05])
-```
 
 
 ### Feature Engineering
