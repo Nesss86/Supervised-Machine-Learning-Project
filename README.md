@@ -33,15 +33,9 @@ The goal of this project was to use supervised learning techniques to build a ma
 
 ### Feature Engineering
 
+ - Standard Scaler was chosen for feature engineering as it is more sensitive to outliers
+
 ``` python
-from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
-# Features to scale/normalize (excluding the target variable 'Outcome')
-features_to_scale = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
-
-# Standard Scaling
-scaler = StandardScaler()
-diabetes_data[features_to_scale] = scaler.fit_transform(diabetes_data[features_to_scale])
 
 # Create a new feature representing BMI categories
 diabetes_data['BMI_Category'] = pd.cut(diabetes_data['BMI'], bins=[0, 18.5, 24.9, 29.9, 100], labels=['Underweight', 'Normal', 'Overweight', 'Obese'])
