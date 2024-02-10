@@ -64,7 +64,7 @@ The logisitc regression model was peformed first and yielded the following resul
 The Random Forest Model was perfomed second and yielded the following results:
 <img src="images/Random Forest Model.png" alt="Notebook">
 
-<img src="images/Confusion Matrix - Random Forest.png" alt="Notebook">
+
 
 
 ## Conclusion
