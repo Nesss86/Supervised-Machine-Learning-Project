@@ -59,7 +59,7 @@ The initiative was to try two models to determine which would be the best to use
 The logisitc regression model was peformed first and yielded the following results:
 <img src="images/Logistic Regression Model.png" alt="Notebook">
 
-<img src="images/Confusion Matrix - Logistic Regression .png" alt="Notebook">
+<img src="images/Confusion Matrix - Logistic Regression.png" alt="Notebook">
 
 The Random Forest Model was perfomed second and yielded the following results:
 <img src="images/Random Forest Model.png" alt="Notebook">
@@ -71,7 +71,8 @@ The Random Forest Model was perfomed second and yielded the following results:
 - The strongest positive correlations were pregnancies and age. As both of those increased, the likelihood of diabetes incresed
 - There appear to be outliers for skin thickness and insulin
 - The average age of people with diabetes was 33
-- While the random forest model had higher accuracy, it was determined that the logisitic regression model had better recall, F-1 score, ROC-AUC, and would be the better choice for supervised machine learning for this dataset.
+- While the random forest model had higher recall, it was determined that the logisitic regression model had better precision &  F-1 score
+- The Logistic Regression model has a  slightly higher mean cross validation accuracy and would be the preferred model
 
 
 
