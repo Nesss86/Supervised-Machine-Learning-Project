@@ -57,7 +57,7 @@ I decided to use two models and evaluated them both to determine which was best 
 The initiative was to try two models to determine which would be the best to use for this prediction. 
 
 The logisitc regression model was peformed first and yielded the following results:
-<img src="images/Logistic Regression.png" alt="Notebook">
+<img src="images/Logistic Regression Model.png" alt="Notebook">
 
 The Random Forest Model was perfomed second and yielded the following results:
 <img src="images/Random Forest Model.png" alt="Notebook">
