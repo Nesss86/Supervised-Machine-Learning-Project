@@ -42,44 +42,15 @@ diabetes_data['BMI_Category'] = pd.cut(diabetes_data['BMI'], bins=[0, 18.5, 24.9
 ```
 
 ### Training A Machine Learning Model
-``` python
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.pipeline import Pipeline
-from imblearn.over_sampling import SMOTE
-from sklearn.model_selection import train_test_split
 
-# Separate features (X) and target variable (y)
-X = diabetes_data.drop('Outcome', axis=1)
-y = diabetes_data['Outcome']
+I decided to use two models and evaluated them both to determine which was best for this particular project. I started with a logistic regression model and then tried the more complex model (random forest) to see if it showed any improvements in performance. It is considered good practice to use multiple models as well as incorporating some hyperparameter tuning to further improve. Cross validation is always a benefit as is assists with the following:
 
-# Split the data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+- Assessing model performance
+- Reduce Overfitting
+- Optomize Hyperparameter Tuning
+- Handle Imbalanced Datasets
+- Model Selection
 
-# Identify numeric and categorical columns
-numeric_features = X.select_dtypes(include=['int64', 'float64']).columns
-categorical_features = X.select_dtypes(include=['object']).columns
-
-# Create transformers for numeric and categorical columns
-numeric_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='median')),
-])
-
-categorical_transformer = Pipeline(steps=[
-    ('imputer', SimpleImputer(strategy='most_frequent')),  # You can use other strategies for categorical data
-])
-
-# Apply transformers to appropriate columns
-preprocessor = ColumnTransformer(
-    transformers=[
-        ('num', numeric_transformer, numeric_features),
-        ('cat', categorical_transformer, categorical_features),
-    ])
-
-# Apply SMOTE for oversampling the minority class
-smote = SMOTE(random_state=42)
-X_train_resampled, y_train_resampled = smote.fit_resample(preprocessor.fit_transform(X_train), y_train)
-```
 
 ## Results
 
