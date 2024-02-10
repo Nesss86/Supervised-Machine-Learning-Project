@@ -59,8 +59,12 @@ The initiative was to try two models to determine which would be the best to use
 The logisitc regression model was peformed first and yielded the following results:
 <img src="images/Logistic Regression Model.png" alt="Notebook">
 
+<img src="images/Confusion Matrix - Logistic Regression .png" alt="Notebook">
+
 The Random Forest Model was perfomed second and yielded the following results:
 <img src="images/Random Forest Model.png" alt="Notebook">
+
+<img src="images/Confusion Matrix - Random Forest.png" alt="Notebook">
 
 
 ## Conclusion
